@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Problems — CodeArena</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="problems-page">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.75rem">
+      <div>
+        <h1 class="page-title">Problems</h1>
+        <p class="page-subtitle" id="problems-count">Loading...</p>
+      </div>
+      <div class="streak-pill">
+        <span class="streak-dot"></span>
+        7-day streak
+      </div>
+    </div>
+
+    <div class="filters-bar">
+      <div class="search-wrap">
+        <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="search-input" class="search-input" placeholder="Search problems...">
+      </div>
+      <select id="filter-difficulty" class="filter-select">
+        <option value="">All Difficulties</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+      <select id="filter-tag" class="filter-select">
+        <option value="">All Topics</option>
+      </select>
+      <select id="filter-status" class="filter-select">
+        <option value="">All Status</option>
+        <option value="solved">Solved</option>
+        <option value="attempted">Attempted</option>
+        <option value="not_attempted">Not Attempted</option>
+      </select>
+    </div>
+
+    <div class="card" style="padding:0;overflow:hidden">
+      <table class="problems-table">
+        <thead>
+          <tr>
+            <th style="width:36px"></th>
+            <th>Title</th>
+            <th style="width:100px">Difficulty</th>
+            <th>Topics</th>
+            <th style="width:100px">Acceptance</th>
+          </tr>
+        </thead>
+        <tbody id="problems-tbody">
+          <tr><td colspan="5" style="text-align:center;padding:3rem;color:var(--text-muted)">Loading problems...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="pagination" class="pagination"></div>
+  </div>
+
+  <div id="footer"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — CodeArena</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="profile-page">
+    <div class="profile-banner"></div>
+    <div class="profile-info-card">
+      <div class="profile-avatar-wrap">
+        <div class="profile-avatar-xl">AC</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem">
+        <div>
+          <h1 style="font-size:1.25rem;font-weight:800;letter-spacing:-0.03em">tourneysolver</h1>
+          <p style="color:var(--text-muted);font-size:0.82rem;margin-top:2px">Alex Chen</p>
+          <p style="color:var(--text-secondary);font-size:0.875rem;margin-top:0.6rem;max-width:420px;line-height:1.7">
+            Competitive programmer and software engineer. Love solving hard algorithmic problems. Top 10 globally on CodeArena.
+          </p>
+          <div style="display:flex;gap:1.25rem;margin-top:0.75rem;flex-wrap:wrap">
+            <span style="font-size:0.78rem;color:var(--text-muted)">San Francisco, CA</span>
+            <span style="font-size:0.78rem;color:var(--text-muted)">Stanford University</span>
+            <span style="font-size:0.78rem;color:var(--text-muted)">Software Engineer</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:0.6rem;padding-top:0.5rem">
+          <button class="btn btn-ghost btn-sm">Edit Profile</button>
+          <button class="btn btn-primary btn-sm">Follow</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:1.25rem">
+      <!-- Left -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div class="card">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1rem">Statistics</div>
+          <div style="display:flex;flex-direction:column;gap:0.7rem">
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem">
+              <span style="color:var(--text-secondary)">Problems Solved</span>
+              <span style="font-weight:700;color:var(--accent)">247</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem">
+              <span style="color:var(--text-secondary)">Contest Rating</span>
+              <span style="font-weight:700;color:var(--purple)">1,847</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem">
+              <span style="color:var(--text-secondary)">Global Rank</span>
+              <span style="font-weight:700">#4</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem">
+              <span style="color:var(--text-secondary)">Contests Attended</span>
+              <span style="font-weight:700">42</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:0.875rem">
+              <span style="color:var(--text-secondary)">Acceptance Rate</span>
+              <span style="font-weight:700;color:var(--green)">68.4%</span>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--border);margin-top:1rem;padding-top:1rem;display:flex;justify-content:space-around">
+            <div style="text-align:center">
+              <div style="font-size:1.2rem;font-weight:800;color:var(--easy)">89</div>
+              <div style="font-size:0.7rem;color:var(--easy);font-weight:600">Easy</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:1.2rem;font-weight:800;color:var(--medium)">124</div>
+              <div style="font-size:0.7rem;color:var(--medium);font-weight:600">Medium</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:1.2rem;font-weight:800;color:var(--hard)">34</div>
+              <div style="font-size:0.7rem;color:var(--hard);font-weight:600">Hard</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1rem">Badges</div>
+          <div class="badges-grid">
+            <div class="badge-item"><div class="bi-icon">&#127942;</div><div class="bi-name">Top 10</div></div>
+            <div class="badge-item"><div class="bi-icon">&#9889;</div><div class="bi-name">Speed Coder</div></div>
+            <div class="badge-item"><div class="bi-icon">&#127919;</div><div class="bi-name">Sharpshooter</div></div>
+            <div class="badge-item"><div class="bi-icon">&#127775;</div><div class="bi-name">100 Solved</div></div>
+            <div class="badge-item"><div class="bi-icon">&#129504;</div><div class="bi-name">DP Master</div></div>
+            <div class="badge-item"><div class="bi-icon">&#127881;</div><div class="bi-name">Streak 30</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <!-- Rating Graph -->
+        <div class="card">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1rem">Contest Rating History</div>
+          <div style="position:relative;height:140px;background:var(--bg-tertiary);border-radius:var(--radius-sm);overflow:hidden">
+            <svg width="100%" height="100%" viewBox="0 0 600 140" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="rg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#4f8ef7" stop-opacity="0.2"/>
+                  <stop offset="100%" stop-color="#4f8ef7" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path d="M0,130 L50,120 L100,112 L150,100 L200,92 L250,105 L300,82 L350,68 L400,72 L450,52 L500,44 L550,34 L600,24 L600,140 L0,140 Z" fill="url(#rg)"/>
+              <path d="M0,130 L50,120 L100,112 L150,100 L200,92 L250,105 L300,82 L350,68 L400,72 L450,52 L500,44 L550,34 L600,24" fill="none" stroke="#4f8ef7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-top:0.75rem;font-size:0.75rem;color:var(--text-muted)">
+            <span>Start: 1,200</span>
+            <span style="color:var(--green)">+647 total</span>
+            <span>Current: 1,847</span>
+          </div>
+        </div>
+
+        <!-- Heatmap -->
+        <div class="card">
+          <div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1rem">Activity</div>
+          <div id="profile-heatmap" class="heatmap"></div>
+        </div>
+
+        <!-- Recent Submissions -->
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="padding:1rem 1.25rem;border-bottom:1px solid var(--border)">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Recent Submissions</div>
+          </div>
+          <table class="submissions-table">
+            <thead><tr><th>Problem</th><th>Status</th><th>Language</th><th>Time</th></tr></thead>
+            <tbody id="profile-submissions"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hm = document.getElementById('profile-heatmap');
+      if (hm) {
+        let html = '';
+        for (let i = 0; i < 364; i++) {
+          const r = Math.random();
+          const lvl = r > 0.85 ? 'l4' : r > 0.7 ? 'l3' : r > 0.55 ? 'l2' : r > 0.4 ? 'l1' : '';
+          html += `<div class="heatmap-cell ${lvl}"></div>`;
+        }
+        hm.innerHTML = html;
+      }
+      document.getElementById('profile-submissions').innerHTML = DUMMY_SUBMISSIONS.slice(0, 5).map(s => `
+        <tr>
+          <td><a href="problem.html?id=${s.problemId}" style="color:var(--accent);font-size:0.875rem;font-weight:500">${s.problem}</a></td>
+          <td>${getSubmissionBadge(s.status)}</td>
+          <td><span class="tag">${s.language}</span></td>
+          <td style="color:var(--text-muted);font-size:0.78rem">${s.time}</td>
+        </tr>`).join('');
+    });
+  </script>
+</body>
+</html>

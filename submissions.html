@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submissions — CodeArena</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="submissions-page">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.75rem">
+      <div>
+        <h1 class="page-title">Submissions</h1>
+        <p class="page-subtitle">Your complete submission history</p>
+      </div>
+      <div style="display:flex;gap:0.6rem;flex-wrap:wrap">
+        <select class="filter-select" id="filter-status-sub">
+          <option value="">All Status</option>
+          <option value="Accepted">Accepted</option>
+          <option value="Wrong Answer">Wrong Answer</option>
+          <option value="Runtime Error">Runtime Error</option>
+          <option value="Time Limit Exceeded">Time Limit Exceeded</option>
+        </select>
+        <select class="filter-select" id="filter-lang-sub">
+          <option value="">All Languages</option>
+          <option value="Python">Python</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="Java">Java</option>
+          <option value="C++">C++</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.5rem">
+      <div class="stat-card">
+        <div class="sc-num" style="color:var(--green)">5</div>
+        <div class="sc-label">Accepted</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num" style="color:var(--red)">2</div>
+        <div class="sc-label">Wrong Answer</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num" style="color:var(--orange)">1</div>
+        <div class="sc-label">Runtime Error</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num" style="color:var(--purple)">1</div>
+        <div class="sc-label">Time Limit Exceeded</div>
+      </div>
+    </div>
+
+    <div class="card" style="padding:0;overflow:hidden">
+      <table class="submissions-table">
+        <thead>
+          <tr>
+            <th>Problem</th>
+            <th>Status</th>
+            <th>Language</th>
+            <th>Runtime</th>
+            <th>Memory</th>
+            <th>Submitted</th>
+          </tr>
+        </thead>
+        <tbody id="submissions-tbody">
+          <tr><td colspan="6" style="text-align:center;padding:3rem;color:var(--text-muted)">Loading submissions...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination" style="margin-top:1.5rem">
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>

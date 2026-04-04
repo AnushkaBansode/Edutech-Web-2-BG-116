@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — CodeArena</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="dashboard-page">
+    <div style="margin-bottom:1.5rem">
+      <h1 class="page-title">Dashboard</h1>
+      <p class="page-subtitle">Welcome back, <a href="profile.html" style="color:var(--accent)">tourneysolver</a></p>
+    </div>
+
+    <!-- Top Stats -->
+    <div class="stats-cards">
+      <div class="stat-card">
+        <div class="sc-num" style="color:var(--accent)">247</div>
+        <div class="sc-label">Problems Solved</div>
+        <div class="mini-chart" id="mini-chart" style="margin-top:0.85rem"></div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num">7</div>
+        <div class="sc-label">Day Streak</div>
+        <div class="sc-sub">Best: 23 days</div>
+      </div>
+      <div class="stat-card">
+        <div class="sc-num" style="color:var(--purple)">1,847</div>
+        <div class="sc-label">Contest Rating</div>
+        <div class="sc-sub" style="color:var(--green)">+42 this week</div>
+      </div>
+    </div>
+
+    <div class="dashboard-grid">
+      <!-- Left -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <!-- Profile Card -->
+        <div class="profile-card">
+          <div class="profile-avatar-lg">AC</div>
+          <div class="p-name">tourneysolver</div>
+          <div class="p-handle">Alex Chen · Rank #4</div>
+
+          <div class="streak-pill" style="margin:0.6rem auto;display:inline-flex">
+            <span class="streak-dot"></span>
+            7-day streak
+          </div>
+
+          <div class="solved-breakdown">
+            <div class="solved-item solved-easy">
+              <div class="s-count">89</div>
+              <div class="s-diff">Easy</div>
+            </div>
+            <div class="solved-item solved-medium">
+              <div class="s-count">124</div>
+              <div class="s-diff">Medium</div>
+            </div>
+            <div class="solved-item solved-hard">
+              <div class="s-count">34</div>
+              <div class="s-diff">Hard</div>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:center;margin:1rem 0">
+            <div class="progress-ring">
+              <svg width="110" height="110" viewBox="0 0 110 110">
+                <circle cx="55" cy="55" r="46" fill="none" stroke="var(--bg-tertiary)" stroke-width="8"/>
+                <circle cx="55" cy="55" r="46" fill="none" stroke="var(--accent)" stroke-width="8"
+                  stroke-dasharray="289" stroke-dashoffset="160" stroke-linecap="round"/>
+              </svg>
+              <div class="ring-text">
+                <div class="r-num">247</div>
+                <div class="r-label">/ 2048</div>
+              </div>
+            </div>
+          </div>
+
+          <a href="profile.html" class="btn btn-ghost btn-sm" style="width:100%">View Profile</a>
+        </div>
+
+        <!-- Badges -->
+        <div class="card">
+          <div style="font-size:0.82rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1rem">Badges</div>
+          <div class="badges-grid">
+            <div class="badge-item"><div class="bi-icon">&#127942;</div><div class="bi-name">Top 10</div></div>
+            <div class="badge-item"><div class="bi-icon">&#9889;</div><div class="bi-name">Speed Coder</div></div>
+            <div class="badge-item"><div class="bi-icon">&#127919;</div><div class="bi-name">Sharpshooter</div></div>
+            <div class="badge-item"><div class="bi-icon">&#127775;</div><div class="bi-name">100 Solved</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <!-- Heatmap -->
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem">
+            <div style="font-size:0.82rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Activity — Last 52 Weeks</div>
+            <span style="font-size:0.75rem;color:var(--text-muted)">247 submissions</span>
+          </div>
+          <div id="heatmap" class="heatmap"></div>
+          <div style="display:flex;align-items:center;gap:0.4rem;margin-top:0.75rem;font-size:0.72rem;color:var(--text-muted)">
+            Less
+            <div style="width:10px;height:10px;border-radius:2px;background:var(--bg-tertiary)"></div>
+            <div style="width:10px;height:10px;border-radius:2px;background:rgba(52,208,88,0.25)"></div>
+            <div style="width:10px;height:10px;border-radius:2px;background:rgba(52,208,88,0.5)"></div>
+            <div style="width:10px;height:10px;border-radius:2px;background:rgba(52,208,88,0.75)"></div>
+            <div style="width:10px;height:10px;border-radius:2px;background:var(--green)"></div>
+            More
+          </div>
+        </div>
+
+        <!-- Topic Progress -->
+        <div class="card">
+          <div style="font-size:0.82rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1rem">Progress by Topic</div>
+          <div id="topic-progress"></div>
+        </div>
+
+        <!-- Recent Submissions -->
+        <div class="card" style="padding:0;overflow:hidden">
+          <div style="padding:1rem 1.25rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+            <div style="font-size:0.82rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.07em">Recent Submissions</div>
+            <a href="submissions.html" class="btn btn-ghost btn-sm">View all</a>
+          </div>
+          <table class="submissions-table">
+            <thead><tr>
+              <th>Problem</th><th>Status</th><th>Language</th><th>Time</th>
+            </tr></thead>
+            <tbody id="recent-submissions-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const topics = [
+        { name: "Arrays", solved: 45, total: 120, color: "var(--accent)" },
+        { name: "Dynamic Programming", solved: 28, total: 95, color: "var(--purple)" },
+        { name: "Trees", solved: 32, total: 80, color: "var(--green)" },
+        { name: "Graphs", solved: 18, total: 75, color: "var(--orange)" },
+        { name: "Strings", solved: 41, total: 90, color: "var(--easy)" }
+      ];
+      document.getElementById('topic-progress').innerHTML = topics.map(t => `
+        <div style="margin-bottom:0.85rem">
+          <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:0.3rem">
+            <span style="color:var(--text-secondary)">${t.name}</span>
+            <span style="color:var(--text-muted);font-variant-numeric:tabular-nums">${t.solved} / ${t.total}</span>
+          </div>
+          <div style="height:4px;background:var(--bg-tertiary);border-radius:2px;overflow:hidden">
+            <div style="height:100%;width:${Math.round(t.solved/t.total*100)}%;background:${t.color};border-radius:2px"></div>
+          </div>
+        </div>`).join('');
+
+      document.getElementById('recent-submissions-tbody').innerHTML = DUMMY_SUBMISSIONS.slice(0, 5).map(s => `
+        <tr>
+          <td><a href="problem.html?id=${s.problemId}" style="color:var(--accent);font-size:0.875rem;font-weight:500">${s.problem}</a></td>
+          <td>${getSubmissionBadge(s.status)}</td>
+          <td><span class="tag">${s.language}</span></td>
+          <td style="color:var(--text-muted);font-size:0.78rem">${s.time}</td>
+        </tr>`).join('');
+    });
+  </script>
+</body>
+</html>

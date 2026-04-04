@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contests — CodeArena</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <div class="contests-page">
+    <div style="margin-bottom:2rem">
+      <h1 class="page-title">Contests</h1>
+      <p class="page-subtitle">Compete with thousands of developers worldwide</p>
+    </div>
+
+    <!-- Live -->
+    <div style="margin-bottom:2.5rem">
+      <div class="section-header" style="margin-bottom:1rem">
+        <h2 style="display:flex;align-items:center;gap:0.6rem">
+          <span class="live-dot"></span>
+          Live Now
+        </h2>
+      </div>
+      <div class="grid-2" id="ongoing-contests">
+        <div style="color:var(--text-muted);font-size:0.875rem;padding:1rem 0">No contests running right now.</div>
+      </div>
+    </div>
+
+    <!-- Upcoming -->
+    <div style="margin-bottom:2.5rem">
+      <div class="section-header" style="margin-bottom:1rem">
+        <h2>Upcoming</h2>
+      </div>
+      <div class="grid-2" id="upcoming-contests"></div>
+    </div>
+
+    <!-- Past -->
+    <div>
+      <div class="section-header" style="margin-bottom:1rem">
+        <h2>Past Contests</h2>
+        <button class="btn btn-ghost btn-sm">View all</button>
+      </div>
+      <div class="grid-2" id="past-contests"></div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>
