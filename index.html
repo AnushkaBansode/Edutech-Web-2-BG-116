@@ -91,7 +91,37 @@
   <div id="footer"></div>
   <script src="js/script.js"></script>
   <script>
+
     document.addEventListener('DOMContentLoaded', () => {
+      async function loadUsersFromBackend() {
+        try{
+          const response = await fetch('http://localhost:4000/users');
+          const users = await response.json();
+
+          if(users.length > 0) {
+            const tableBody = document.getElementById('top-coders-tbody');
+            tableBody.innerHTML = users.map((u, index) => `
+              <tr>
+                <td><span class="rank-num">${index + 1}</span></td>
+                <td>
+                  <div class="user-cell">
+                    <div class="avatar" style="background:#6366f118;color:#6366f1">${u.name.charAt(0)}</div>
+                    <div>
+                      <div style="font-weight:600;font-size:0.875rem">${u.name}</div>
+                      <div style="font-size:0.75rem;color:var(--text-muted)">${u.email}</div>
+                    </div>
+                  </div>
+                </td>
+                <td style="font-weight:600">${u.age}</td> <td style="font-weight:700;color:var(--purple)">1200</td>
+              </tr>`).join('');
+          }
+          } catch (err) {
+          console.error("Connection failed! Make sure 'node serverr.js' is running.", err);
+        }
+      }
+      loadUsersFromBackend();
+        }
+      }
       const featured = [
         { id: 1, title: "Two Sum", difficulty: "Easy", tags: ["Array", "Hash Table"], acceptance: 49.1 },
         { id: 3, title: "Longest Substring Without Repeating Characters", difficulty: "Medium", tags: ["Sliding Window", "String"], acceptance: 33.8 },
