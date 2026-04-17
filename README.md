@@ -1,3 +1,34 @@
+# CodeArena - Full-Stack Competitive Programming Platform
+
+CodeArena is a modern platform for developers to practice algorithms, track their growth, and compete on a global leaderboard. This project was built for the BackForge 2026 Hackathon.
+
+## Features
+- **Landing Page**: Modern UI with real-time stats.
+- **Full-Stack Leaderboard**: Real data fetched from MongoDB Atlas.
+- **Authentication**: Secure Signup and Login functionality.
+- **Problem Set**: Explore algorithmic challenges with difficulty filters.
+
+##  Tech Stack
+- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB Atlas
+- **Tools**: Mongoose, CORS, VS Code Live Server
+
+##  How to Run Locally
+
+### 1. Prerequisites
+- Node.js installed on your machine.
+- A modern web browser.
+
+### 2. Backend Setup
+1. Navigate to the root directory.
+2. Install dependencies (if not already done):
+   ```bash
+   npm install express mongoose cors
+
+
+
+
 # 💻 Coding Platform – EdTech Website-2
 
 ## 📌 Introduction
